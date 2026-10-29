@@ -1,3 +1,6 @@
+; Build with:
+; vasmm68k_mot -m68000 -Fbin -devpac mdcode.s -o mdcode.bin
+    
     ; This will be loaded into work ram at a very special location
     org $FF0100
 Start:
