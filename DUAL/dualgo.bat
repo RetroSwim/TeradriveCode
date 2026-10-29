@@ -1,7 +1,7 @@
 @echo off
 goto runme
 
-n beep.bin
+n mdcode.bin
 l 0050:0000
 o 1166 8
 o 1160 21
@@ -16,6 +16,11 @@ m 0050:0000 l 82 ce00:0100
 o 1163 1
 o 1164 81
 q
+
+REM I used the DOS parameter area at 0050:0000 because my assembled 68k program was
+REM only a hundred-odd bytes. The MD only have 64KB of worm RAM, which is only a single
+REM segment. If you wanna change it, go right for, just remember to update lines
+REM 5 AND 15.
 
 :runme
 echo This will load the 68k binary into PC RAM, start the interface,
